@@ -1,5 +1,5 @@
 module "labels" {
-  source      = "git::git@github.com:slovink/terraform-azure-labels.git"
+  source      = "git::git@github.com:slovink/terraform-azure-labels.git?ref=1.0.0"
   name        = var.name
   environment = var.environment
   managedby   = var.managedby
@@ -45,6 +45,6 @@ resource "azurerm_bastion_host" "main" {
   ip_configuration {
     name                 = format("%s-network", module.labels.id)
     subnet_id            = var.subnet_id
-    public_ip_address_id = join("", azurerm_public_ip.pip.*.id)
+    public_ip_address_id = join("", azurerm_public_ip.pip[*].id)
   }
 }

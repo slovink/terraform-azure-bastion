@@ -18,16 +18,16 @@ variable "label_order" {
   description = "Label order, e.g. sequence of application name and environment `name`,`environment`,'attribute' [`webserver`,`qa`,`devops`,`public`,] ."
 }
 
-variable "tags" {
-  type        = map(string)
-  default     = {}
-  description = "Additional tags (e.g. map(`BusinessUnit`,`XYZ`)."
-}
+#variable "tags" {
+#  type        = map(string)
+#  default     = {}
+#  description = "Additional tags (e.g. map(`BusinessUnit`,`XYZ`)."
+#}
 
 variable "managedby" {
   type        = string
-  default     = ""
-  description = "ManagedBy, eg ''."
+  default     = "contact@slovink.com"
+  description = "ManagedBy, eg 'slovink'."
 }
 
 
@@ -40,14 +40,14 @@ variable "resource_group_name" {
 variable "location" {
   type        = string
   default     = ""
-  description = "A location the resources"  
+  description = "A location the resources"
 }
 
-variable "virtual_network_name" {
-  type        = string
-  default     = ""
-  description = "The name of the virtual network"
-}
+#variable "virtual_network_name" {
+#  type        = string
+#  default     = ""
+#  description = "The name of the virtual network"
+#}
 
 variable "public_ip_allocation_method" {
   type        = string
@@ -62,11 +62,11 @@ variable "public_ip_sku" {
   description = "The SKU of the Public IP. Accepted values are Basic and Standard. Defaults to Basic"
 }
 
-variable "azure_bastion_subnet_address_prefix" {
-  type        = list(any)
-  default     = []
-  description = "The address prefix to use for the Azure Bastion subnet"
-}
+#variable "azure_bastion_subnet_address_prefix" {
+#  type        = list(any)
+#  default     = []
+#  description = "The address prefix to use for the Azure Bastion subnet"
+#}
 
 variable "enable_copy_paste" {
   type        = bool
