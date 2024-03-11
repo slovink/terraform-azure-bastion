@@ -1,0 +1,51 @@
+---
+#
+# This is the canonical configuration for the `README.md`
+# Run `make readme` to rebuild the `README.md`
+#
+
+# Name of this project
+name : Terraform AZURE BASTION
+
+# License of this project
+license: "MIT"
+
+# Canonical GitHub repo
+github_repo: git@github.com:slovink/terraform-azure-bastion.git
+
+# Badges to display
+badges:
+  - name: "Terraform"
+    image: "https://img.shields.io/badge/Terraform-v1.7.4-green"
+    url: "https://www.terraform.io"
+  - name: "Licence"
+    image: "https://img.shields.io/badge/License-MIT-blue.svg"
+    url: "https://github.com/slovink/terraform-azure-bastion/blob/master/LICENSE"
+
+#  description of this project
+description: |-
+  Terraform module to create Azure bastion service resource on AZURE.
+# extra content
+include:
+  - "terraform.md"
+
+# How to use this project
+# How to use this project
+usage: |-
+  Here are some examples of how you can use this module in your inventory structure:
+  ### azure bastion
+  ```hcl
+
+     # Basic
+    module "bastion" {
+   depends_on           = [module.resource_group]
+   source               = "./../"
+   name                 = "app"
+   environment          = "test"
+   label_order          = ["name", "environment"]
+   resource_group_name  = module.resource_group.resource_group_name
+   location             = module.resource_group.resource_group_location
+    virtual_network_name = module.vnet.name
+   subnet_id            = module.name_specific_subnet.specific_subnet_id
+  }
+  ```

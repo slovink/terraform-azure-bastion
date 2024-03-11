@@ -12,9 +12,9 @@
 <p align="center">
 
 <a href="https://www.terraform.io">
-  <img src="https://img.shields.io/badge/Terraform-v1.1.7-green" alt="Terraform">
+  <img src="https://img.shields.io/badge/Terraform-v1.7.4-green" alt="Terraform">
 </a>
-<a href="LICENSE.md">
+<a href="https://github.com/slovink/terraform-azure-bastion/blob/dev/LICENSE">
   <img src="https://img.shields.io/badge/License-APACHE-blue.svg" alt="Licence">
 </a>
 
@@ -43,7 +43,7 @@ Here is an example of how you can use this module in your inventory structure:
   ```hcl
 module "bastion" {
   depends_on           = [module.resource_group]
-  source               = "./../"
+  source               = "https://github.com/slovink/terraform-azure-bastion.git?ref=1.0.0"
   name                 = "app"
   environment          = "test"
   label_order          = ["name", "environment"]
@@ -54,13 +54,16 @@ module "bastion" {
 }
   ```
 
+# Examples
+For detailed examples on how to use this module, please refer to the '[example](https://github.com/slovink/terraform-azure-bastion/blob/dev/_example)' directory within this repository.
+
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/slovink/terraform-azure-bastion/blob/dev/LICENSE) file for details.
 
 
 ## Feedback
-If you come accross a bug or have any feedback, please log it in our [issue tracker](https://github.com/slovink/terraform-azure-bastion), or feel free to drop us an email at [devops@slovink.com](devops@slovink.com).
+If you come accross a bug or have any feedback, please log it in our [issue tracker](https://github.com/slovink/terraform-azure-bastion), or feel free to drop us an email at [contact@slovink.com](contact@slovink.com).
 
 If you have found it worth your time, go ahead and give us a ★ on [our GitHub](https://github.com/slovink/terraform-azure-bastion)!
 
@@ -69,7 +72,7 @@ If you have found it worth your time, go ahead and give us a ★ on [our GitHub]
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.6.6 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.7.4 |
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >=3.87.0 |
 
 ## Providers
